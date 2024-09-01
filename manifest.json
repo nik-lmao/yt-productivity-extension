@@ -1,0 +1,26 @@
+{
+    "manifest_version": 3,
+    "name": "Youtube Productivity Extension",
+    "description": "x is a Chrome extension that helps you study better by providing multiple practical features on YouTube.",
+    "version": "1.0",
+    "action": {
+      "default_popup": "pages/popup.html",
+      "default_icon": "icons/icon.png",
+      "default_title": "Youtube Productivity Extension"
+    },
+    "icons": {
+      "16": "icons/icon-16.png",
+      "48": "icons/icon-48.png",
+      "128": "icons/icon-128.png"
+    },
+    "permissions": [
+      "activeTab",
+      "storage"
+    ],
+    "content_scripts": [
+      {
+        "matches": ["https://www.youtube.com/*", "https://m.youtube.com/*"],
+        "js": ["scripts/home.js", "scripts/search.js", "scripts/video.js"]
+      }
+    ]
+  }
